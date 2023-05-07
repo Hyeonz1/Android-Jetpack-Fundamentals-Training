@@ -8,6 +8,7 @@ import com.example.unscramble.data.allWords
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 
 class GameViewModel : ViewModel() {
 
@@ -53,4 +54,15 @@ class GameViewModel : ViewModel() {
         userGuess = guessedWord
     }
 
+    fun checkUserGuess() {
+        if (userGuess.equals(currentWord, ignoreCase = true)) {
+
+        } else {
+            _uiState.update { currentState -> //currentState는 GameUiState를 의미
+                currentState.copy(isGuessedWordWrong = true)
+            }
+        }
+
+        updateUserGuess("")
+    }
 }
