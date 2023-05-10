@@ -108,7 +108,7 @@ fun GameScreen(
             }
 
             OutlinedButton(
-                onClick = { gameViewModel.skipWord() },
+                onClick = { },
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text(
