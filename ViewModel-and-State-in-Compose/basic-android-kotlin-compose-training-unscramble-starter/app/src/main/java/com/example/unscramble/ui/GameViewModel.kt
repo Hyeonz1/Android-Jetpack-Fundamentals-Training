@@ -85,4 +85,9 @@ class GameViewModel : ViewModel() {
             )
         }
     }
+시
+    fun skipWord() {
+        updateGameState(_uiState.value.score)
+        updateUserGuess("")
+    }
 }
