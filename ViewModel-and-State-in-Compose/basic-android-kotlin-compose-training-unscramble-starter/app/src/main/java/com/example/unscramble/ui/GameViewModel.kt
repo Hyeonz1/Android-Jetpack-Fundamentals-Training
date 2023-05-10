@@ -22,10 +22,6 @@ class GameViewModel : ViewModel() {
     private lateinit var currentWord: String //왜 lateinit으로 선언하였나.
     private var usedWords: MutableSet<String> = mutableSetOf()
 
-    init {
-        resetGame()
-    }
-
     var userGuess by mutableStateOf("")
         private set
 
@@ -101,5 +97,6 @@ class GameViewModel : ViewModel() {
         updateGameState(_uiState.value.score)
         updateUserGuess("")
     }
+
 
 }
